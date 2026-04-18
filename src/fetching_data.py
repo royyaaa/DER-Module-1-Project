@@ -9,7 +9,7 @@ Original file is located at
 
 import requests
 
-API_KEY = "AIzaSyC4kmQs4trkRkaS6Yj4gTTjuvAcDLKv1so"
+API_KEY = ""
 
 SEARCH_URL = "https://www.googleapis.com/youtube/v3/search"
 VIDEO_URL = "https://www.googleapis.com/youtube/v3/videos"

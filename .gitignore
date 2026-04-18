@@ -19,6 +19,7 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+src/fetching_data.py
 .Python
 build/
 develop-eggs/
