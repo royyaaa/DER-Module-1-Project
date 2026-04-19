@@ -44,7 +44,7 @@ Below is the file structure and the location of key components in this project:
 2.	Data Cleaning Code:
 3.	EDA code:
 
-## DISCALIMERS!!!
+## DISCALIMERS
 Here for the disclaimers
 
 ## References
