@@ -50,7 +50,7 @@ Below is the file structure and the location of key components in this project:
 4.  Main code: we do have 2 main code files. The one is for fetching the Data, and the one more is for running the rest. Bot files are stored in main folder. The files names is scripts.py (the main one) and fetch_one.py (the main script for fetching data).
 5.  Reports data: Any reports, explanations and findings of this project are available in reports/
 
-## DISCALIMERS
+## DISCLAIMERS !!!
 Notably, during project initialization using Cookiecutter Data Science (CCDS), no folder named `src` was generated, despite its common importance in project structure. This is because the current version of CCDS no longer creates a `src` directory by default. Instead, the source code directory is named based on the defined module_name, which in this repository is `project_module1`
 
 ## References
