@@ -36,14 +36,11 @@ def count_videos_by_duration(df):
 
 def top_channels_by_category(df):
     channel_per_category = (
-        df.groupby(["duration_category", "channel"])["views"]
-        .sum()
-        .reset_index()
+        df.groupby(["duration_category", "channel"])["views"].sum().reset_index()
     )
 
     top_channel = (
-        channel_per_category
-        .sort_values(["duration_category", "views"], ascending=[True, False])
+        channel_per_category.sort_values(["duration_category", "views"], ascending=[True, False])
         .groupby("duration_category")
         .head(5)
     )
@@ -82,6 +79,7 @@ def plot_videos_per_year(series, save_path=None):
 
     if save_path:
         import os
+
         os.makedirs(os.path.dirname(save_path), exist_ok=True)
         plt.savefig(save_path, bbox_inches="tight")
 
@@ -98,16 +96,15 @@ def plot_views_per_year(series, save_path=None):
     plt.xlabel("Year")
     plt.ylabel("Total Views")
 
-    plt.gca().yaxis.set_major_formatter(
-        ticker.FuncFormatter(lambda x, _: f'{int(x/1e6)}M')
-    )
+    plt.gca().yaxis.set_major_formatter(ticker.FuncFormatter(lambda x, _: f"{int(x/1e6)}M"))
 
     if save_path:
         import os
+
         os.makedirs(os.path.dirname(save_path), exist_ok=True)
         plt.savefig(save_path, bbox_inches="tight")
 
-    plt.show()   
+    plt.show()
 
 
 def plot_views_by_category(df, save_path=None):
@@ -120,19 +117,20 @@ def plot_views_by_category(df, save_path=None):
     plt.xlabel("Year")
     plt.ylabel("Total Views")
 
-    plt.gca().yaxis.set_major_formatter(
-        ticker.FuncFormatter(lambda x, _: f'{int(x/1e6)}M')
-    )
+    plt.gca().yaxis.set_major_formatter(ticker.FuncFormatter(lambda x, _: f"{int(x/1e6)}M"))
 
     if save_path:
         import os
+
         os.makedirs(os.path.dirname(save_path), exist_ok=True)
         plt.savefig(save_path, bbox_inches="tight")
 
     plt.show()
 
+
 def save_describe(df, path="reports/describe.txt"):
     import os
+
     os.makedirs(os.path.dirname(path), exist_ok=True)
 
     desc = df.describe()
