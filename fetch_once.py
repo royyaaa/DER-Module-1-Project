@@ -3,8 +3,8 @@ from project_module1.save_data import save_to_json
 
 def main():
     # fetching data
-    keywords = ["mengatasi brainrot"]
-    regions = ["ID"]
+    keywords = ["how to stop brainrot","digital detox" "reduce screen time","stop scrolling addiction","doom scrolling"]
+    regions = ["ID", "SG", "MY"]
 
     all_data = []
 
