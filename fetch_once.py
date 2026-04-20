@@ -2,6 +2,7 @@ from project_module1.fetch_data import build_dataset
 from project_module1.save_data import save_to_json
 
 def main():
+    # fetching data
     keywords = ["mengatasi brainrot"]
     regions = ["ID"]
 
@@ -18,7 +19,8 @@ def main():
 
     save_to_json(all_data, "data/raw/brainrot464.json")
 
-    print(f"Total data: {len(all_data)}")
+    print(f"Fetching process is Done!\nTotal data: {len(all_data)}")
+
 
 if __name__ == "__main__":
     main()
