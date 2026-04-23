@@ -11,17 +11,19 @@ from project_module1.eda import (
     plot_videos_per_year,
     plot_views_per_year,
     plot_views_by_category,
-    save_describe
+    save_describe,
 )
 
 
 def main():
     # cleaning
-    files = ["3awal.json",
-    "brainrot464.json",
-    "brainrot467.json",
-    "brainrot531.json",
-    "doomscrolling522.json"]
+    files = [
+        "3awal.json",
+        "brainrot464.json",
+        "brainrot467.json",
+        "brainrot531.json",
+        "doomscrolling522.json",
+    ]
     df = load_json_files(files)
     df_clean = clean_data(df)
     save_clean_data(df_clean)
@@ -55,22 +57,13 @@ def main():
     print("\n[8] Generating plots...")
 
     vpy = videos_per_year(df)
-    plot_videos_per_year(
-        vpy,
-        save_path="reports/figures/videos_per_year.png"
-    )
+    plot_videos_per_year(vpy, save_path="reports/figures/videos_per_year.png")
 
     vviews = views_per_year(df)
-    plot_views_per_year(
-        vviews,
-        save_path="reports/figures/views_per_year.png"
-    )
+    plot_views_per_year(vviews, save_path="reports/figures/views_per_year.png")
 
     vcat = views_by_year_and_duration(df)
-    plot_views_by_category(
-        vcat,
-        save_path="reports/figures/views_by_category.png"
-    )
+    plot_views_by_category(vcat, save_path="reports/figures/views_by_category.png")
 
     print("\n=== THE PROCESSES IS DONE!!! ===")
 

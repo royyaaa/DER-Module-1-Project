@@ -4,8 +4,8 @@ import re
 from pathlib import Path
 
 
-def load_json_files(file_list, base_path="data/raw"):
-    all_data = []
+def load_json_files(file_list: list[str], base_path: str="data/raw")->pd.DataFrame:
+    all_data: list[dict] = []
 
     for f in file_list:
         filepath = Path(base_path) / f
@@ -15,7 +15,7 @@ def load_json_files(file_list, base_path="data/raw"):
     return pd.DataFrame(all_data)
 
 
-def clean_data(df):
+def clean_data(df: pd.DataFrame)-> pd.DataFrame:
     # drop duplicate
     df = df.drop_duplicates(subset="videoId")
 
@@ -25,7 +25,7 @@ def clean_data(df):
     df["comments"] = df["comments"].astype(int)
 
     # duration convert
-    def iso8601_to_seconds(duration):
+    def iso8601_to_seconds(duration:str)->int:
         match = re.match(r"PT((\d+)H)?((\d+)M)?((\d+)S)?", duration)
 
         hours = int(match.group(2)) if match.group(2) else 0
@@ -53,7 +53,7 @@ def clean_data(df):
     return df
 
 
-def save_clean_data(df, filename="data/processed/data_clean.json"):
+def save_clean_data(df: pd.DataFrame, filename: str="data/processed/data_clean.json")->None:
     filepath = Path(filename)
     filepath.parent.mkdir(parents=True, exist_ok=True)
 
